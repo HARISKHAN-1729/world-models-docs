@@ -1,0 +1,59 @@
+site_name: WORLD_MODELS-JOINT-EMBEDDING PREDICTIVE ARCHITECTURES (JEPA)
+site_description: Exploring Latent Spaces and Generative Agents
+site_url: https://github.com/HARISKHAN-1729/world-models-docs
+
+# 1. Theme Configuration
+theme:
+  name: null              # Disable built-in themes
+  custom_dir: theme       # Use our custom 'theme' folder
+
+# 2. Navigation (Optional - MkDocs will auto-generate if omitted)
+nav:
+  - HOME: index.md
+ 
+
+# 3. CSS & JS Loading
+extra_css:
+  - assets/css/style.css
+
+extra_javascript:
+  # Load Tailwind + Typography Plugin via CDN
+  - https://cdn.tailwindcss.com?plugins=typography
+  # Load Three.js
+  - https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js
+  # Load our 3D Script
+  - assets/js/three-bg.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  
+  - assets/js/mathjax-config.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  
+  # ADD THIS LINE FOR DIAGRAMS:
+  - https://unpkg.com/mermaid@10/dist/mermaid.min.js
+  
+  # 2. Load Initialization Script (ADD THIS)
+  - assets/js/mermaid-init.js
+
+# 4. Markdown Extensions
+markdown_extensions:
+  - attr_list
+  - admonition
+  - toc:
+      permalink: false
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  
+  # HIGHLIGHTING CONFIGURATION
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  
+  # DIAGRAMS & CODE FENCES
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_div_format

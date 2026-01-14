@@ -1,0 +1,140 @@
+/* Glassmorphism Panel */
+.glass-panel {
+    background: rgba(20, 20, 25, 0.4); /* Darker glass for better contrast */
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #000; }
+::-webkit-scrollbar-thumb { background: #333; border: 2px solid #000; }
+::-webkit-scrollbar-thumb:hover { background: #00f3ff; }
+
+/* Glitch Animation for Logo */
+.glitch { position: relative; }
+.glitch::before, .glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: #050505;
+}
+.glitch::before {
+    left: 2px; text-shadow: -1px 0 #ff00c1;
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim 5s infinite linear alternate-reverse;
+}
+.glitch::after {
+    left: -2px; text-shadow: -1px 0 #00fff9;
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim2 5s infinite linear alternate-reverse;
+}
+@keyframes glitch-anim {
+    0% { clip: rect(33px, 9999px, 11px, 0); }
+    20% { clip: rect(89px, 9999px, 13px, 0); }
+    40% { clip: rect(10px, 9999px, 98px, 0); }
+    60% { clip: rect(54px, 9999px, 22px, 0); }
+    80% { clip: rect(12px, 9999px, 67px, 0); }
+    100% { clip: rect(3px, 9999px, 45px, 0); }
+}
+
+/* Admonition/Callout Overrides for "Warning" or "Info" boxes */
+.admonition {
+    border-left: 4px solid var(--neon-accent);
+    background: rgba(0, 243, 255, 0.05);
+    padding: 1rem;
+    margin: 1.5rem 0;
+    border-radius: 0 8px 8px 0;
+}
+.admonition-title {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #00f3ff;
+    margin-bottom: 0.5rem;
+}
+
+/* ---------------------------------------------------------
+   VS CODE DARK THEME FOR MKDOCS
+   --------------------------------------------------------- */
+   
+/* Code Block Background (Dark Grey) */
+.highlight {
+  background: #1e1e1e;
+  color: #d4d4d4;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+/* Line Numbers */
+.highlight .linenos {
+  color: #858585;
+  background-color: #1e1e1e;
+  border-right: 1px solid #333;
+  padding-right: 8px;
+  margin-right: 8px;
+}
+
+/* Code Title Bar (The "genesis.py" header) */
+.md-typeset .highlight figcaption {
+    background-color: #252526;
+    color: #cccccc;
+    padding: 8px 12px;
+    font-family: monospace;
+    font-size: 0.85em;
+    border-bottom: 1px solid #333;
+    border-radius: 8px 8px 0 0;
+}
+
+/* Fix corners when title exists */
+.md-typeset .highlight figcaption + .highlight {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    margin-top: 0;
+}
+
+/* ---------------- SYNTAX COLORS ---------------- */
+
+/* Keywords (def, return, if) -> Pink/Purple */
+.highlight .k, .highlight .kd, .highlight .kn, .highlight .kp, .highlight .kr {
+  color: #c586c0; 
+  font-weight: bold;
+}
+
+/* Functions & Methods -> Yellow */
+.highlight .nf, .highlight .fm {
+  color: #dcdcaa; 
+}
+
+/* Strings -> Orange */
+.highlight .s, .highlight .sa, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #ce9178; 
+}
+
+/* Numbers -> Light Green */
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo {
+  color: #b5cea8; 
+}
+
+/* Comments -> Green */
+.highlight .c, .highlight .ch, .highlight .cm, .highlight .cp, .highlight .cpf, .highlight .c1, .highlight .cs {
+  color: #6a9955; 
+  font-style: italic;
+}
+
+/* Variables / Self -> Blue */
+.highlight .nv, .highlight .bp {
+  color: #9cdcfe; 
+}
+
+/* Classes -> Blue-Green */
+.highlight .nc {
+  color: #4ec9b0; 
+}
+
+/* Operators (=, +, -) -> White */
+.highlight .o, .highlight .ow {
+  color: #d4d4d4; 
+}
