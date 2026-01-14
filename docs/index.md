@@ -2074,3 +2074,21 @@ Where:
 2.  **GPS:** $Embeddings \xrightarrow{\text{Vector Addition}} Located\_Embeddings$
 3.  **Game:** $Located\_Embeddings \xrightarrow{\text{Set Split}} Context \cup Targets$
 4.  **Brain:** $Context \xrightarrow{\text{Matrix Multiplication (Attention)}} Predictions$
+
+
+
+
+
+## Citation
+
+!!! quote "Cite this work"
+    If you find this documentation useful, please cite it using the following BibTeX:
+
+    ```bibtex
+    @misc{khan2026worldmodels,
+      title = {World Models: Joint-Embedding Predictive Architectures (JEPA)},
+      author = {Khan, Muhammad Haris},
+      year = {2026},
+      url = {[https://HARISKHAN-1729.github.io/world-models-docs/](https://HARISKHAN-1729.github.io/world-models-docs/)},
+      note = {Accessed: 2026-01-14}
+    }
